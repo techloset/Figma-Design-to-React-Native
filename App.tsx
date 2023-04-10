@@ -11,7 +11,7 @@ const MyComponent = () => {
   return (
         <NavigationContainer>
 
-           <Stack.Navigator initialRouteName="Demo" screenOptions={{headerShown:false}}>
+           <Stack.Navigator initialRouteName='Demo' screenOptions={{headerShown:false}}>
 
      <Stack.Screen name="Home" component={HomeScreen} />
      <Stack.Screen name="Demo" component={DemoScreen} />       

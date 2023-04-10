@@ -16,7 +16,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {useState, PropsWithChildren} from 'react';
 
 import Carousel, {Pagination} from 'react-native-snap-carousel';
-const {width: viewportWidth, height: viewportHeight} = Dimensions.get('window');
+const {width,  height} = Dimensions.get('window');
 
 const Demo = ({navigation}: any) => {
   const pagination = () => (
@@ -36,9 +36,9 @@ const Demo = ({navigation}: any) => {
   );
 
   return (
-    <ScrollView style={{flex: 1}}>
+    <View style={{flex: 1,justifyContent:"space-between", }}>
       <TouchableOpacity
-        style={{alignItems: 'flex-end', marginTop: 38, marginRight: 20}}
+        style={{alignItems: 'flex-end', marginTop: '5%', marginRight: 20}}
         onPress={() => navigation.navigate('Home')}>
         <LinearGradient
           colors={['#8205FF','rgba(207, 161, 254, 0.21)' ]}
@@ -57,13 +57,13 @@ const Demo = ({navigation}: any) => {
       </TouchableOpacity>
 
       <View style={{alignItems: 'center'}}>
-        <Image source={require('../../assets/homePage/demo.png')} style={{width:'94%',marginTop:64}} />
+        <Image source={require('../../assets/homePage/demo.png')} style={{width:'100%', marginHorizontal: 20, height: width <= 350 ? 320 : 400}} />
         <Text
       
           style={[styles.name,{
             fontFamily:"Montserrat-Bold",
             marginBottom: 7,
-            marginTop:14,
+            // marginTop:14,
             fontSize: 22,
             color: '#000000',
       lineHeight:27
@@ -75,16 +75,14 @@ const Demo = ({navigation}: any) => {
           {`Organise all your to-do’s andlist your\n projects. Color tag them to set priority\n and categories`}
         </Text>
       </View>
-      <View style={{alignItems: 'center',marginTop:22}}>
+      <View style={{alignItems: 'center'}}>
         <TouchableOpacity onPress={() => navigation.navigate('Home')} >
           <LinearGradient
             colors={['rgba(255, 255, 255, 0.01)', '#E906E0']}
             start={{x: 0.5075, y: -1.0149}}
             useAngle={false}
             style={{
-              // width: 67,
               padding:23,
-              // height: 67,
               borderRadius: 10000,
               justifyContent: 'center',
               alignItems: 'center',
@@ -94,13 +92,13 @@ const Demo = ({navigation}: any) => {
         </TouchableOpacity>
         <ImageBackground
           source={require('../../assets/homePage/Subtract.png')}
-          style={{height: 107, width: '100%', position: 'relative'}}>
+          style={{ width: '100%', position: 'relative'}}>
           <Text
             style={{
               fontSize: 14,
               color: '#FFFFFF',
               marginLeft: 20,
-              marginTop: 19,
+              // marginTop: 19,
               fontFamily:"Montserrat-Regular"
             }}>
             Back
@@ -108,7 +106,7 @@ const Demo = ({navigation}: any) => {
           {pagination()}
         </ImageBackground>
       </View>
-    </ScrollView>
+    </View>
   );
 };
 export default Demo;
