@@ -36,12 +36,13 @@ const Demo = ({navigation}: any) => {
   );
 
   return (
-    <View style={{flex: 1,justifyContent:"space-between", }}>
+    <View style={{flex: 1, justifyContent:'space-between'}}>
       <TouchableOpacity
         style={{alignItems: 'flex-end', marginTop: '5%', marginRight: 20}}
         onPress={() => navigation.navigate('Home')}>
         <LinearGradient
-          colors={['#8205FF','rgba(207, 161, 254, 0.21)' ]}
+          colors={['#BA76FE','rgba(207, 161, 254, 0.4)' ]}
+          // #D9B4FE
           useAngle={true}
           angle={0}
           locations={[-0.7,1.5]}
@@ -55,9 +56,14 @@ const Demo = ({navigation}: any) => {
           <Text style={{lineHeight: 20, color: '#FFFFFF',fontFamily:"Montserrat-Regular"}}>Skip </Text>
         </LinearGradient>
       </TouchableOpacity>
+<View>
+<View style={{aspectRatio:350/313,}}>
+<Image source={require('../../assets/homePage/demo.png')} style={{width:'100%',height:'100%',resizeMode:'contain'}} />
+</View>
+      <View style={{alignItems: 'center',}}>
 
-      <View style={{alignItems: 'center'}}>
-        <Image source={require('../../assets/homePage/demo.png')} style={{width:'100%', marginHorizontal: 20, height: width <= 350 ? 320 : 400}} />
+
+
         <Text
       
           style={[styles.name,{
@@ -75,37 +81,49 @@ const Demo = ({navigation}: any) => {
           {`Organise all your to-do’s andlist your\n projects. Color tag them to set priority\n and categories`}
         </Text>
       </View>
-      <View style={{alignItems: 'center'}}>
+
+      <View style={{alignItems: 'center',marginTop:26}}>
         <TouchableOpacity onPress={() => navigation.navigate('Home')} >
           <LinearGradient
-            colors={['rgba(255, 255, 255, 0.01)', '#E906E0']}
-            start={{x: 0.5075, y: -1.0149}}
-            useAngle={false}
+            colors={['rgba(244, 143, 240,.7)', 'rgb(237, 60, 230)']}
+            // start={{x: 0.5075, y: -1.0149}}
+            // useAngle={false}
             style={{
               padding:23,
               borderRadius: 10000,
               justifyContent: 'center',
               alignItems: 'center',
+              // marginTop:60
             }}>
             <Image source={require('../../assets/homePage/arrow.png')} />
           </LinearGradient>
         </TouchableOpacity>
+
         <ImageBackground
-          source={require('../../assets/homePage/Subtract.png')}
-          style={{ width: '100%', position: 'relative'}}>
+source={require("../../assets/homePage/Subtract.png")}
+          style={{ width: '100%', }}>
+            
           <Text
             style={{
               fontSize: 14,
               color: '#FFFFFF',
               marginLeft: 20,
-              // marginTop: 19,
+              marginTop: 19,
+            
+              
               fontFamily:"Montserrat-Regular"
             }}>
             Back
           </Text>
+          <View style={{alignItems:"center"}}>
+
+          {/* <Image source={require('../../assets/homePage/e.png')}></Image> */}
+          </View>
           {pagination()}
         </ImageBackground>
       </View>
+</View>
+
     </View>
   );
 };

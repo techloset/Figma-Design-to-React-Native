@@ -14,6 +14,8 @@ import {
 } from 'react-native';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
+const {width,  height} = Dimensions.get('window');
+
 const Data = [
   {
     id: 1,
@@ -87,11 +89,12 @@ const AddTask = ({sidetime, heading, estimateTime, index}: any) => {
         paddingBottom: 12,
         borderBottomWidth: 1,
         marginLeft: 21,
-        marginRight: 25,
-        paddingTop: index==0? 6:34,
+        marginRight:  width>=350?25:10,
+        paddingTop: index==0? 10:34,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+        gap:width>=350?28:10
       }}>
       <Text style={{fontSize: 13, color: 'rgba(93, 96, 101, 0.5)',fontFamily:"Montserrat-Regular",}}>
         {sidetime}
@@ -102,23 +105,19 @@ const AddTask = ({sidetime, heading, estimateTime, index}: any) => {
         index == 0 ? (
        
         
-          // <LinearGradient
-          //   useAngle={true}
-          //   angle={166}
-          //   locations={[0.15, 0.6]}
-          //   colors={['#00F0FF', '#03B0BC']}>
-            <View
-            style={[styles.container,{backgroundColor:'#00F0FF'}]}>
+          <LinearGradient
+   
+            colors={['#00F0FF', '#03B0BC']}
+            style={[styles.container,{backgroundColor:'#00F0FF',flexGrow:0.7}]}>
 
           <Block {...{estimateTime, heading, index}} />
         
 
        
-        </View>
-          // </LinearGradient>
+          </LinearGradient>
         ) : (
           <View
-          style={[styles.container,{backgroundColor:'#FFFFFF'}]}>
+          style={[styles.container,{backgroundColor:'#FFFFFF',flexGrow:0.7}]}>
         
             <Block {...{estimateTime, heading, index}} />
         </View>
@@ -143,7 +142,7 @@ export default () => {
 };
 const styles=StyleSheet.create({
   container:{
-    width: '68%',
+    // width: '68%',
     paddingLeft: 24,
     paddingVertical: 13,
     gap: 5,

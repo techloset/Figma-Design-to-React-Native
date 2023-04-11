@@ -24,9 +24,7 @@ const Footer = () => {
         style={{position: 'absolute', bottom: -30}}
         onPress={() => navigation.navigate('Task')}>
         <LinearGradient
-          colors={['rgba(255, 255, 255, 0.01)', '#E906E0']}
-          start={{x: 0.5075, y: -1.0149}}
-          useAngle={false}
+           colors={['rgba(244, 143, 240,.7)', 'rgb(237, 60, 230)']}
           style={{
             width: 67,
             height: 67,

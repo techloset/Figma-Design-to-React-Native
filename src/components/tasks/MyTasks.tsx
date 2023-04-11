@@ -13,6 +13,7 @@ import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import type {PropsWithChildren} from 'react';
 import {useNavigation} from '@react-navigation/native';
+const {width,  height} = Dimensions.get('window');
 type propData = PropsWithChildren<{
   colors: string[];
   angle: number;
@@ -29,14 +30,17 @@ const Data = ({colors, angle, locations, text, tasks,arrowPosition,containerHeig
     <LinearGradient
       useAngle={true}
       {...{angle, locations, colors}}
-      style={[styles.bg, styles.ml,{flexDirection:'row',justifyContent:'space-between',alignItems:arrowPosition=='top'?'flex-start':'flex-end',...styling}]}>
+      style={[styles.bg, {flexDirection:'row',justifyContent:width>=400?'space-around':'space-between',alignItems:arrowPosition=='top'?'flex-start':'flex-end',...styling}]}>
 
       <View >
-        <Image source={path} />
+
+        <Image source={path}  />
       <Text style={[styles.txt, styles.color,]}>{text}</Text>
       <Text style={[styles.color, styles.txt2]}>{tasks} </Text>
       </View>
-        <Image source={require('../../assets/homePage/Vector.png')} />
+        <View style={{}}>
+        <Image source={require('../../assets/homePage/Vector.png')}  style={{width:width<=340?15:22,resizeMode:'contain'}} />
+        </View>
     </LinearGradient>
   );
 };

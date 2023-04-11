@@ -17,8 +17,9 @@ const Section = () => {
         style={[styles.space,{
           flexDirection: 'row',
           justifyContent: 'space-between',
-          // marginTop: 13,
-          marginBottom:4
+          marginTop: 10,
+          marginBottom:4,
+  
        
         }]}>
         <View >

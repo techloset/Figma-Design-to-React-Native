@@ -23,19 +23,16 @@ const TaskScreen = () => {
 <View style={{
         flex: 1,
         backgroundColor:"#FDFDFD"
-// justifyContent:'space-evenly'
 
 }}>
 
        <LinearGradient
-        useAngle={true}
+     
         colors={['#FF48F8', '#E906E0']}
-        locations={[0.38, 1.32]}
-        angle={180}
+       
         style={{
           paddingHorizontal: '20%',
           paddingVertical: 20,
-          // width: '68%',
           borderRadius: 15,
           position:'absolute',
           left:'16%',
