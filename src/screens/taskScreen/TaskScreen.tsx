@@ -41,9 +41,12 @@ const TaskScreen = () => {
           zIndex:10,
 
         }}>
+          <TouchableOpacity>
+
         <Text style={{color: '#FFFFFF', fontSize: 14,  fontFamily:"Montserrat-Bold",textAlign:"center"}}>
           Add New Task
         </Text>
+          </TouchableOpacity>
       </LinearGradient>
 
       <Header />
@@ -51,7 +54,7 @@ const TaskScreen = () => {
     <View
       style={{
         flex: 1,
-zIndex:0,marginBottom:80
+zIndex:0,marginBottom:85
       }}>
       
   

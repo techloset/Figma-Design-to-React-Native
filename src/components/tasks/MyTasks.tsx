@@ -78,7 +78,11 @@ const MyTasks = () => {
               styling:{
 paddingTop:24,
 paddingRight:17,
-paddingBottom:21
+paddingBottom:21,
+shadowOpacity: 1,
+
+  elevation: 20,
+    shadowColor: '#FF0660',
               }
             }}
           />
@@ -94,7 +98,10 @@ paddingBottom:21
               styling:{
                 paddingTop:17,
 paddingRight:21,
-paddingBottom:11
+paddingBottom:11,
+shadowOpacity: 1,
+elevation: 20,
+shadowColor: '#8205FF',
               }
             }}
             
@@ -117,7 +124,10 @@ paddingBottom:11
               styling:{
                 paddingTop:16,
                 paddingRight:13,
-                paddingBottom:9
+                paddingBottom:9,
+                shadowOpacity: 1,
+elevation: 10,
+shadowColor: '#8205FF',
               }
             }}
           />

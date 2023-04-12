@@ -16,77 +16,81 @@ import {
 import React, {useEffect, useState} from 'react';
 const {width}=Dimensions.get('window')
 import { useNavigation } from '@react-navigation/native';
+
 const DATA = [
   {
-    id: 1,
+    id:0,
     day: 'Mon',
   },
   {
-    id: 2,
+    id: 1,
     day: 'Tue',
   },
   {
-    id: 3,
+    id: 2,
     day: 'Thu',
     bg: true,
   },
   {
-    id: 4,
+    id: 3,
     day: 'Fri',
   },
   {
-    id: 5,
+    id: 4,
     day: 'Sat',
   },
   {
-    id: 6,
+    id: 5,
     day: 'Sun',
   },
 ];
 const Item = (props: any) => {
+  console.log(props);
+  
+const {state,setState,item}=props
+
   return (
     <>
-      <View style={{paddingBottom: 1}}>
+  
+      <Pressable style={{paddingBottom: 17,backgroundColor:'#FFFFFF'}} onPress={()=>setState(item.id)  }>
         <View
           style={{
             borderRadius: 30,
             width: 59,
             
             height: 96,
-            backgroundColor: props.bg ? '#FF9D00' : '#FFFFFF',
+            backgroundColor: state==item.id? '#FF9D00' : '#FFFFFF',
             marginHorizontal: 13,
             
           
             gap: 13,
 
             alignItems: 'center',
-            shadowOffset: {
-              width: 0,
-              height: 12,
-            },
-            shadowOpacity: 0.58,
-         
+            elevation: 15,
 
-            elevation: 2,
+            shadowColor: '#52006A',
+
           }}>
-       
           <Text
             style={{
               fontFamily:"Montserrat-Bold",
               fontSize: 36,
-              color: props.bg ? 'white' : 'black',
+              color:state==item.id ?'white':'black',
+              
             }}>
-            {props.id}
+            {item.id}
           </Text>
-          <Text style={{fontSize: 18, color: props.bg ? 'white' : 'black',fontFamily:"Montserrat-Bold",}}>
-            {props.day}
+          <Text style={{fontSize: 18, color:state==item.id ? 'white' : 'black',fontFamily:"Montserrat-Bold",}}>
+            {item.day}
           </Text>
         </View>
-      </View>
+      </Pressable>
     </>
   );
 };
 const Calendar = () => {
+  const [state,setState]=useState(3)
+  console.log(state);
   
   const navigation:any=useNavigation()
 
@@ -107,14 +111,15 @@ const Calendar = () => {
       <SafeAreaView>
         <FlatList
           data={DATA}
-          renderItem={({item, index}) => <Item {...item} index={index} />}
+          renderItem={({item, index}) => <Item {...{item,state,setState}} index={index} />}
           horizontal={true}
           keyExtractor={(item: any) => item.id}
           showsHorizontalScrollIndicator={false}
          
         />
       
-<Pressable style={{alignItems:"flex-end",marginTop:17,marginBottom:6}}  >
+<Pressable style={{alignItems:"flex-end",marginBottom:6}}  >
+  
 
           <View style={{backgroundColor:'rgba(150, 45, 255, 0.5)',height:1,width:'60%',position:"relative"}} >
 

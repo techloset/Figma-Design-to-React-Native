@@ -117,7 +117,6 @@ source={require("../../assets/homePage/Subtract.png")}
           </Text>
           <View style={{alignItems:"center"}}>
 
-          {/* <Image source={require('../../assets/homePage/e.png')}></Image> */}
           </View>
           {pagination()}
         </ImageBackground>

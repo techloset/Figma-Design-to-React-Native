@@ -1,20 +1,25 @@
-import { View, Text,Image ,StyleSheet} from 'react-native'
+import { View, Text,Image ,StyleSheet,TouchableOpacity} from 'react-native'
 import React from 'react'
 import type {PropsWithChildren} from 'react';
 const Header = () => {
   return (
     <View style={[styles.common,{paddingHorizontal:20,marginTop:'8%'}]}>
 <View style={[styles.common,styles.gap]}>
+<TouchableOpacity>
 
 <Image
 
 source={require('../../assets/homePage/Menu.png')}/>
+</TouchableOpacity>
+
 <Text style={styles.txt}>June 03, 2020</Text>
 </View>
+<TouchableOpacity>
 
 <Image 
 
- source={require('../../assets/homePage/Profile.png')}/>
+source={require('../../assets/homePage/Profile.png')}/>
+</TouchableOpacity>
     </View>
   )
 }

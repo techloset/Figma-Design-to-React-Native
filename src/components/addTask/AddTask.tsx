@@ -108,7 +108,8 @@ const AddTask = ({sidetime, heading, estimateTime, index}: any) => {
           <LinearGradient
    
             colors={['#00F0FF', '#03B0BC']}
-            style={[styles.container,{backgroundColor:'#00F0FF',flexGrow:0.7}]}>
+            style={[styles.container,{backgroundColor:'#00F0FF',flexGrow:0.7, elevation: 20,
+            shadowColor: '#03B0BC',}]}>
 
           <Block {...{estimateTime, heading, index}} />
         
@@ -142,20 +143,16 @@ export default () => {
 };
 const styles=StyleSheet.create({
   container:{
-    // width: '68%',
     paddingLeft: 24,
     paddingVertical: 13,
     gap: 5,
    
     borderRadius: 15,
     shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 0,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 0,
+ 
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
 
-    elevation: 2,
+    elevation: 1,
   }
 })

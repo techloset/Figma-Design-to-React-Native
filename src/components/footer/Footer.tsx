@@ -50,10 +50,13 @@ const Footer = () => {
           require('../../assets/homePage/11.png'),
           require('../../assets/homePage/Option.png'),
         ].map((src, index) => (
+<TouchableOpacity  key={index + 5}>
+
           <Image
             source={src}
-           
-            key={index + 5}></Image> 
+            
+           ></Image> 
+            </TouchableOpacity>
         ))}
       </View>
       <View style={{flexDirection: 'row', gap: 35, paddingRight: 20}}>
@@ -61,10 +64,13 @@ const Footer = () => {
           require('../../assets/homePage/Option2.png'),
           require('../../assets/homePage/g.png'),
         ].map((src, index) => (
+          <TouchableOpacity  key={index + 10}>
+
           <Image
             source={src}
-   
-            key={index + 10}></Image>
+            
+          ></Image>
+            </TouchableOpacity>
         ))}
       </View>
     </View>

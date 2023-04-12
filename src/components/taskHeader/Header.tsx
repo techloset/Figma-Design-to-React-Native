@@ -21,10 +21,13 @@ const Header = () => {
     <Image source={require('../../assets/homePage/new.png')}/>
       </TouchableOpacity>
     <Text style={styles.text}>Todays Tasks</Text>
+    <TouchableOpacity>
+
     <Image 
 
 source={require('../../assets/homePage/Profile.png')}/>
 
+</TouchableOpacity>
   </View>
   )
 }
