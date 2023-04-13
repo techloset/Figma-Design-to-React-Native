@@ -20,19 +20,19 @@ const Data = [
   {
     id: 1,
     sidetime: '9 PM',
-    heading: ' Landing page design',
+    heading: 'Landing page design',
     estimateTime: '12 pm - 3pm',
   },
   {
     id: 2,
     sidetime: '12 AM',
-    heading: ' Landing page design',
+    heading: 'Landing page design',
     estimateTime: '12 pm - 3pm',
   },
   {
     id: 3,
     sidetime: '12 PM',
-    heading: ' Mobile App prototypying',
+    heading: 'Mobile App prototypying',
     estimateTime: '12 pm - 3pm',
   },
   {
@@ -44,19 +44,19 @@ const Data = [
   {
     id: 5,
     sidetime: '12 PM',
-    heading: ' Landing page design',
+    heading: 'Landing page design',
     estimateTime: '12 pm - 3pm',
   },
   {
     id: 6,
     sidetime: '12 PM',
-    heading: ' Landing page design',
+    heading: 'Landing page design',
     estimateTime: '12 pm - 3pm',
   },
   {
     id: 7,
     sidetime: '12 PM',
-    heading: ' Landing page design',
+    heading: 'Landing page design',
     estimateTime: '12 pm - 3pm',
   },
 ];
@@ -90,7 +90,9 @@ const AddTask = ({sidetime, heading, estimateTime, index}: any) => {
         borderBottomWidth: 1,
         marginLeft: 21,
         marginRight:  width>=350?25:10,
+        marginBottom:  index==Data.length-1?15:0,
         paddingTop: index==0? 10:34,
+
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',

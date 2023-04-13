@@ -25,6 +25,7 @@ type propData = PropsWithChildren<{
   path:any;
   styling:any;
 }>;
+
 const Data = ({colors, angle, locations, text, tasks,arrowPosition,containerHeight,path,styling}: propData) => {
   return (
     <LinearGradient
@@ -52,7 +53,7 @@ const MyTasks = () => {
       <Text
         style={[styles.space,{
           fontSize: 18,
-      
+      marginTop:height*0.03,
           color: 'black',
          marginBottom:12,
          fontFamily:"Montserrat-Bold"

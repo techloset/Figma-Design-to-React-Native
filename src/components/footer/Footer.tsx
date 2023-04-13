@@ -31,6 +31,9 @@ const Footer = () => {
             borderRadius: 10000,
             justifyContent: 'center',
             alignItems: 'center',
+            elevation: 15,
+
+            shadowColor: '#52006A',
           }}>
           <Text style={{fontSize: 30, fontWeight: '700', color: '#FFFFFF'}}>
             +

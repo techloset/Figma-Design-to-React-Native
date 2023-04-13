@@ -1,9 +1,12 @@
-import { View, Text,Image ,StyleSheet,TouchableOpacity} from 'react-native'
+import { View, Text,Image ,StyleSheet,TouchableOpacity,Dimensions} from 'react-native'
 import React from 'react'
 import type {PropsWithChildren} from 'react';
+const {width,height}=Dimensions.get('window')
+
 const Header = () => {
+// console.log(height)
   return (
-    <View style={[styles.common,{paddingHorizontal:20,marginTop:'8%'}]}>
+    <View style={[styles.common,{paddingHorizontal:20,marginTop:height*0.08}]}>
 <View style={[styles.common,styles.gap]}>
 <TouchableOpacity>
 

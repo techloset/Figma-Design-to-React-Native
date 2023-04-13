@@ -27,6 +27,8 @@ const Demo = ({navigation}: any) => {
         width: 12,
         height: 12,
         borderRadius: 5000,
+        // gap:5,
+        marginHorizontal: -3,
         backgroundColor: 'rgba(255, 255, 255, 0.92)',
       }}
       inactiveDotStyle={{}}
@@ -38,7 +40,7 @@ const Demo = ({navigation}: any) => {
   return (
     <View style={{flex: 1, justifyContent:'space-between'}}>
       <TouchableOpacity
-        style={{alignItems: 'flex-end', marginTop: '5%', marginRight: 20}}
+        style={{alignItems: 'flex-end', marginTop: 35, marginRight: 20}}
         onPress={() => navigation.navigate('Home')}>
         <LinearGradient
           colors={['#BA76FE','rgba(207, 161, 254, 0.4)' ]}

@@ -11,21 +11,21 @@ import Footer from '../../components/footer/Footer';
 const { height,width } = Dimensions.get('window')
 const Component=()=>{
   return(
-    <>
+    <View style={{justifyContent:'space-between'}}>
     <Header />
     <MyTasks />
     <Section />
-    </>
+    </View>
 
   )
 }
 const HomePage = ({ navigation }: any) => {
   return (
     // <View  style={{height:height}}>
-    <View style={{ flex: 1, justifyContent: 'space-between', backgroundColor: "#FDFDFD", gap: 10 }}>
+    <View style={{ flex: 1, backgroundColor: "#FDFDFD", gap: 10 }}>
 {
 
-width>=355?<Component></Component>:<ScrollView >
+width>=372?<Component></Component>:<ScrollView >
       <Component></Component>
 </ScrollView>
 }

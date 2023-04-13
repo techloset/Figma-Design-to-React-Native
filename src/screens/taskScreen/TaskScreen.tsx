@@ -39,11 +39,14 @@ const TaskScreen = () => {
           right:'16%',
           bottom: 19,
           zIndex:10,
+          elevation: 15,
 
+          shadowColor: '#FF48F8'
         }}>
           <TouchableOpacity>
 
-        <Text style={{color: '#FFFFFF', fontSize: 14,  fontFamily:"Montserrat-Bold",textAlign:"center"}}>
+        <Text style={{color: '#FFFFFF', fontSize: 14,  fontFamily:"Montserrat-Bold",textAlign:"center",
+}}>
           Add New Task
         </Text>
           </TouchableOpacity>
@@ -54,7 +57,7 @@ const TaskScreen = () => {
     <View
       style={{
         flex: 1,
-zIndex:0,marginBottom:85
+zIndex:0,marginBottom:75
       }}>
       
   

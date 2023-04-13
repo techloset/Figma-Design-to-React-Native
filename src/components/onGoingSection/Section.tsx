@@ -17,7 +17,7 @@ const Section = () => {
         style={[styles.space,{
           flexDirection: 'row',
           justifyContent: 'space-between',
-          marginTop: 10,
+          marginTop: 16,
           marginBottom:4,
   
        
