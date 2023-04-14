@@ -17,8 +17,7 @@ const MyComponent = () => {
      <Stack.Screen name="Home" component={HomeScreen} />
      <Stack.Screen name="Demo" component={DemoScreen} />       
     <Stack.Screen name="Task" component={TaskScreen} />
-    {/* <TaskScreen></TaskScreen> */}
-    {/* <DemoScreen></DemoScreen> */}
+ 
 
           </Stack.Navigator>
         </NavigationContainer>
