@@ -22,42 +22,65 @@ const Data = [
     sidetime: '9 PM',
     heading: 'Landing page design',
     estimateTime: '12 pm - 3pm',
+    mb:13,
+    mt:10
   },
   {
     id: 2,
     sidetime: '12 AM',
     heading: 'Landing page design',
     estimateTime: '12 pm - 3pm',
+    mb:31,
+    mt:23
+
+
   },
   {
     id: 3,
     sidetime: '12 PM',
     heading: 'Mobile App prototypying',
     estimateTime: '12 pm - 3pm',
+    mb:25,
+    mt:37
+
+
   },
   {
     id: 4,
     sidetime: '12 PM',
     heading: 'Night out with girlfriend',
     estimateTime: '12 pm - 3pm',
+
+    mb:25
+    ,mt:23
+
   },
   {
     id: 5,
     sidetime: '12 PM',
     heading: 'Landing page design',
     estimateTime: '12 pm - 3pm',
+    mb:25
+    ,mt:23
+
   },
   {
     id: 6,
     sidetime: '12 PM',
     heading: 'Landing page design',
     estimateTime: '12 pm - 3pm',
+    mb:25
+    ,mt:23
+
   },
   {
     id: 7,
     sidetime: '12 PM',
     heading: 'Landing page design',
     estimateTime: '12 pm - 3pm',
+    mb:25
+    ,mt:23
+
   },
 ];
 
@@ -79,14 +102,15 @@ const Block = ({heading, estimateTime, index}: any) => {
     </>
   );
 };
-const AddTask = ({sidetime, heading, estimateTime, index}: any) => {
+const AddTask = ({sidetime, heading, estimateTime, index,mb,mt}: any) => {
   // const type=index==0?View:LinearGradient
   return (
     <View
       style={{
         borderBottomColor: 'rgba(215, 215, 215, 0.3)',
         // backgroundColor:index==0?'#00F0FF':'#FDFDFD',
-        paddingBottom: 12,
+        // paddingBottom: 12,
+        paddingBottom:mb,
         borderBottomWidth: 1,
         marginLeft: 21,
         marginRight:  width>=350?25:10,

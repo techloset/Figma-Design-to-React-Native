@@ -11,6 +11,7 @@ import {
   } from 'react-native';
 import React from 'react'
 
+const { height,width } = Dimensions.get('window')
 const Section = () => {
   return (
     <View
@@ -19,7 +20,6 @@ const Section = () => {
           justifyContent: 'space-between',
           marginTop: 16,
           marginBottom:4,
-  
        
         }]}>
         <View >
@@ -63,11 +63,14 @@ with responsive`}
             <Text style={styles.buttonText}>Complete: 80%</Text>
           </Pressable>
         </View>
-        <View style={{alignItems: 'flex-end', gap: 14}}>
+        <View style={{alignItems: 'flex-end', gap: 14,}}>
           <Text style={styles.seeAllText}>See all</Text>
           <Image
             source={require('../../assets/homePage/tick.png')}
-            style={{width: 94, height: 118}}></Image>
+            style={{width: width*0.3, height:height*0.14,resizeMode:'contain',
+  marginRight:4
+            
+            }}></Image>
         </View>
       </View>
   )

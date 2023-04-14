@@ -11,9 +11,9 @@ import {
 } from 'react-native';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import type {PropsWithChildren} from 'react';
-import {useNavigation} from '@react-navigation/native';
-const {width,  height} = Dimensions.get('window');
+import type { PropsWithChildren } from 'react';
+import { useNavigation } from '@react-navigation/native';
+const { width, height } = Dimensions.get('window');
 type propData = PropsWithChildren<{
   colors: string[];
   angle: number;
@@ -21,27 +21,28 @@ type propData = PropsWithChildren<{
   text: string;
   tasks: string;
   arrowPosition: string;
-  containerHeight?:number;
-  path:any;
-  styling:any;
+  containerHeight?: number;
+  path: any;
+  styling: any;
+  textStyle?:any;
 }>;
 
-const Data = ({colors, angle, locations, text, tasks,arrowPosition,containerHeight,path,styling}: propData) => {
+const Data = ({ colors, angle, locations,textStyle, text, tasks, arrowPosition, containerHeight, path, styling }: propData) => {
   return (
     <LinearGradient
       useAngle={true}
-      {...{angle, locations, colors}}
-      style={[styles.bg, {flexDirection:'row',justifyContent:width>=400?'space-around':'space-between',alignItems:arrowPosition=='top'?'flex-start':'flex-end',...styling}]}>
+      {...{ angle, locations, colors }}
+      style={[styles.bg, { flexDirection: 'row', justifyContent: width >= 400 ? 'space-around' : 'space-between', alignItems: arrowPosition == 'top' ? 'flex-start' : 'flex-end', ...styling }]}>
 
-      <View >
+      <View style={{...textStyle}} >
 
-        <Image source={path}  />
-      <Text style={[styles.txt, styles.color,]}>{text}</Text>
-      <Text style={[styles.color, styles.txt2]}>{tasks} </Text>
+        <Image source={path} />
+        <Text style={[styles.txt, styles.color,]}>{text}</Text>
+        <Text style={[styles.color, styles.txt2]}>{tasks} </Text>
       </View>
-        <View style={{}}>
-        <Image source={require('../../assets/homePage/Vector.png')}  style={{width:width<=340?15:22,resizeMode:'contain'}} />
-        </View>
+      <View style={{}}>
+        <Image source={require('../../assets/homePage/Vector.png')} style={{ width: width <= 340 ? 15 : 22, resizeMode: 'contain' }} />
+      </View>
     </LinearGradient>
   );
 };
@@ -49,24 +50,24 @@ const MyTasks = () => {
   const navigation: any = useNavigation();
   return (
     <View >
-      
+
       <Text
-        style={[styles.space,{
+        style={[styles.space, {
           fontSize: 18,
-      marginTop:height*0.03,
+          marginTop: height * 0.03,
           color: 'black',
-         marginBottom:12,
-         fontFamily:"Montserrat-Bold"
+          marginBottom: 12,
+          fontFamily: "Montserrat-Bold"
         }]}>
         My Tasks
       </Text>
 
       <View
-        style={[styles.space,{flexDirection: 'row', justifyContent:'space-between',gap:10,}]}>
+        style={[styles.space, { flexDirection: 'row', justifyContent: 'space-between', gap: 10, }]}>
 
         {/* First two cards red and purple */}
 
-        <View style={{gap: 15, flexGrow: 1}}>
+        <View style={{ gap: 15,flexGrow:1 }}>
           <Data
             {...{
               colors: ['#FF005C', '#FF699F'],
@@ -74,87 +75,99 @@ const MyTasks = () => {
               locations: [0.2506, 0.7551],
               text: `Mobile App\nDesign`,
               tasks: '10Tasks',
-              arrowPosition:'top',
-              path:require('../../assets/homePage/1.png'),
-              styling:{
-paddingTop:24,
-paddingRight:17,
-paddingBottom:21,
-shadowOpacity: 1,
+              arrowPosition: 'top',
+              path: require('../../assets/homePage/1.png'),
+              styling: {
+                paddingTop: 23,
+                paddingRight: 17,
+                paddingBottom: 20,
+                shadowOpacity: 1,
 
-  elevation: 20,
-    shadowColor: '#FF0660',
+                elevation: 20,
+
+                shadowColor: '#FF0660',
               }
             }}
           />
-           <Data
+          <Data
             {...{
-              colors:['#8205FF', '#CFA1FE'],
+              colors: ['#8205FF', '#CFA1FE'],
               angle: 23.37,
               locations: [0.062, 1.07],
               text: `Logo`,
               tasks: '2 Tasks',
-              arrowPosition:'bottom',
-              path:require('../../assets/homePage/3.png'),
-              styling:{
-                paddingTop:17,
-paddingRight:21,
-paddingBottom:11,
-shadowOpacity: 1,
-elevation: 20,
-shadowColor: '#8205FF',
+              arrowPosition: 'bottom',
+              path: require('../../assets/homePage/3.png'),
+              textStyle:{
+                marginBottom:8
+              },
+              styling: {
+                paddingTop: 17,
+                paddingRight: 21,
+                paddingBottom: 10,
+                shadowOpacity: 1,
+                elevation: 20,
+                shadowColor: '#8205FF',
+                position:'absolute',
+                bottom:5,
+                width:width*0.4,
+                height:125
+
               }
             }}
-            
+
           />
-          
+
         </View>
         {/* Next two cards yellow and blue */}
 
-        <View style={{gap: 18, flexGrow: 1}}>
-        <Data
+        <View style={{ gap: 18, flexGrow: 1 }}>
+          <Data
             {...{
-              colors:['rgba(243, 104, 3, 0.99)', '#FFCA0F'],
+              colors: ['rgba(243, 104, 3, 0.99)', '#FFCA0F'],
               angle: 28.14,
               locations: [0.17, 1.02],
               text: `Pending`,
               tasks: '16 Tasks',
-              arrowPosition:'top',
-              path:require('../../assets/homePage/2.png'),
-              style:true,
-              styling:{
-                paddingTop:16,
-                paddingRight:13,
-                paddingBottom:9,
+              arrowPosition: 'top',
+              path: require('../../assets/homePage/2.png'),
+              style: true,
+              styling: {
+                paddingTop: 15,
+                paddingRight: 12,
+                paddingBottom: 8,
                 shadowOpacity: 1,
-elevation: 10,
-shadowColor: '#8205FF',
+                elevation: 10,
+                shadowColor: '#8205FF',
               }
             }}
           />
-        <Data
+          <Data
             {...{
-              colors:['#00F0FF', 'rgba(0, 240, 255, 0.5)'],
+              colors: ['#00F0FF', 'rgba(0, 240, 255, 0.5)'],
               angle: 18.51,
               locations: [0.54, 1],
               text: `Website\nDesign`,
               tasks: '16 Tasks',
-              arrowPosition:'bottom',
-              path:require('../../assets/homePage/4.png'),
-              style:true,
-              height: 206,
-              styling:{
-                paddingTop:22,
-                paddingRight:13,
-                paddingBottom:15
+              arrowPosition: 'bottom',
+              path: require('../../assets/homePage/4.png'),
+              style: true,
+              textStyle:{
+                marginBottom:5
+              },
+              styling: {
+                paddingTop: 22,
+                paddingRight: 13,
+                paddingBottom: 15
+                , height: 206,
               }
             }}
           />
-        
-   
+
+
         </View>
       </View>
-  
+
 
 
     </View>
@@ -163,25 +176,25 @@ shadowColor: '#8205FF',
 
 export default MyTasks;
 const styles = StyleSheet.create({
-  bg:{
+  bg: {
 
     borderRadius: 20,
     paddingLeft: 19,
   },
- 
+
   txt: {
     paddingBottom: 11,
     paddingTop: 0,
-    fontFamily:"Montserrat-Bold",
+    fontFamily: "Montserrat-Bold",
     fontSize: 14,
     lineHeight: 17,
-   
+
   },
   color: {
     color: '#FFFFFF',
   },
   txt2: {
-    fontFamily:"Montserrat-Regular",
+    fontFamily: "Montserrat-Regular",
     fontSize: 9,
     lineHeight: 10,
   },
@@ -190,7 +203,7 @@ const styles = StyleSheet.create({
   },
 
 
-  space:{
-    paddingRight:20,paddingLeft:22
+  space: {
+    paddingRight: 20, paddingLeft: 22
   }
 });

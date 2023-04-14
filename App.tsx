@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView,Button} from 'react-native';
+import {View, Text, StyleSheet, ScrollView,Button,Dimensions} from 'react-native';
 import HomeScreen from './src/screens/homeScreen/HomeScreen';
 import DemoScreen from './src/screens/demoScreen/DemoScreen';
 import TaskScreen from './src/screens/taskScreen/TaskScreen';
@@ -8,6 +8,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 const MyComponent = () => {
+
   return (
         <NavigationContainer>
 

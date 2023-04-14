@@ -12,6 +12,7 @@ import {
 import React from 'react'
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
+const { height,width } = Dimensions.get('window')
 const Footer = () => {
     const navigation: any = useNavigation();
   return (
@@ -53,7 +54,7 @@ const Footer = () => {
           require('../../assets/homePage/11.png'),
           require('../../assets/homePage/Option.png'),
         ].map((src, index) => (
-<TouchableOpacity  key={index + 5}>
+<TouchableOpacity  key={index + 5} onPress={()=>      console.log('fdsfasdfasfasdfhjkfasdhkfash',height)}>
 
           <Image
             source={src}
@@ -67,7 +68,7 @@ const Footer = () => {
           require('../../assets/homePage/Option2.png'),
           require('../../assets/homePage/g.png'),
         ].map((src, index) => (
-          <TouchableOpacity  key={index + 10}>
+          <TouchableOpacity  key={index + 10} >
 
           <Image
             source={src}

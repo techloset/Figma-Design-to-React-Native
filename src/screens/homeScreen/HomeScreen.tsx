@@ -9,9 +9,11 @@ import Section from '../../components/onGoingSection/Section';
 import Footer from '../../components/footer/Footer';
 // import { Dimensions} from 'react-native';
 const { height,width } = Dimensions.get('window')
+
 const Component=()=>{
+
   return(
-    <View style={{justifyContent:'space-between'}}>
+    <View style={{justifyContent:'space-around',flex:1,gap:10}}>
     <Header />
     <MyTasks />
     <Section />
@@ -21,12 +23,11 @@ const Component=()=>{
 }
 const HomePage = ({ navigation }: any) => {
   return (
-    // <View  style={{height:height}}>
     <View style={{ flex: 1, backgroundColor: "#FDFDFD", gap: 10 }}>
 {
 
-width>=372?<Component></Component>:<ScrollView >
-      <Component></Component>
+height>=800?<Component></Component>:<ScrollView>
+<Component></Component>
 </ScrollView>
 }
       <Footer />

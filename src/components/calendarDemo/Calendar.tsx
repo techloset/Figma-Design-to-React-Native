@@ -60,8 +60,8 @@ const Item = (props: any) => {
 
             height: 96,
             backgroundColor: state == item.id ? '#FF9D00' : '#FFFFFF',
-            marginLeft: 19,
-
+            marginRight: 19,
+            marginLeft:props.index==0? 19:0,
 
             gap: 13,
 
@@ -120,14 +120,17 @@ shadowColor: 'black', borderRadius:100}}>
   </LinearGradient>
       </View>
       <SafeAreaView>
+      {/* <View style={{paddingLeft:0}}> */}
+
         <FlatList
           data={DATA}
           renderItem={({ item, index }) => <Item {...{ item, state, setState }} index={index} />}
           horizontal={true}
           keyExtractor={(item: any) => item.id}
           showsHorizontalScrollIndicator={false}
-
-        />
+          // style={{paddingLeft:10}}
+          />
+          {/* </View> */}
 
         <Pressable style={{ alignItems: "flex-end", marginBottom: 6 }}  >
 
