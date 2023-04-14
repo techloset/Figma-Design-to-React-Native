@@ -16,13 +16,15 @@ import Calendar from '../../components/calendarDemo/Calendar';
 import AddTask from '../../components/addTask/AddTask';
 import LinearGradient from 'react-native-linear-gradient';
 import {SafeAreaView} from 'react-native-safe-area-context';
-
+const { width, height } = Dimensions.get('window')
 const TaskScreen = () => {
   return (
     <>
+
+
 <View style={{
         flex: 1,
-        backgroundColor:"#FDFDFD"
+        backgroundColor: '#FFFFFF' 
 
 }}>
 
@@ -65,12 +67,23 @@ zIndex:0,marginBottom:75
     </View>
 </View>
 
+
     </>
 
   );
 };
 
-export default TaskScreen;
+export default ()=>{
+  return(
+    <>
+    {
+      height>=600?<TaskScreen/>:<ScrollView>
+        <TaskScreen></TaskScreen>
+      </ScrollView>
+    }
+    </>
+  )
+}
 const styles = StyleSheet.create({
   text: {
     fontWeight: '700',

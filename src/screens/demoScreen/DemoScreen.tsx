@@ -16,9 +16,11 @@ import LinearGradient from 'react-native-linear-gradient';
 import { useState, PropsWithChildren } from 'react';
 
 import Carousel, { Pagination } from 'react-native-snap-carousel';
+import { useNavigation } from '@react-navigation/native';
 const { width, height } = Dimensions.get('window');
 
-const Demo = ({ navigation }: any) => {
+const Demo = () => {
+const navigation:any=useNavigation()
   const pagination = () => (
     <Pagination
       dotsLength={3}
@@ -43,6 +45,7 @@ const Demo = ({ navigation }: any) => {
 
   return (
     <View style={{ flex: 1, justifyContent: 'space-between' }}>
+      {/* <ScrollView> */}
       <TouchableOpacity
         style={{ alignItems: 'flex-end', marginTop: 35, marginRight: 20 }}
         onPress={() => navigation.navigate('Home')}>
@@ -63,8 +66,8 @@ const Demo = ({ navigation }: any) => {
         </LinearGradient>
       </TouchableOpacity>
       <View style={{ gap: 10 }} >
-        <View style={{ alignItems: 'center' }} >
-          <Image source={require('../../assets/homePage/demo.png')} style={{ width: width * 0.8, height: height * 0.42 }} />
+        <View style={{ alignItems: 'center',marginTop:height>656?0:height*0.07 }} >
+          <Image source={require('../../assets/homePage/demo.png')} style={{ width: width * 0.8, height: height * 0.42,resizeMode:'contain' }} />
         </View>
         <View style={{ alignItems: 'center', }}>
 
@@ -126,12 +129,26 @@ const Demo = ({ navigation }: any) => {
             {pagination()}
           </ImageBackground>
         </View>
+        
       </View>
 
+      {/* </ScrollView> */}
     </View>
   );
 };
-export default Demo;
+export default ()=>{
+  return(
+    <>
+    {
+      height>656?<Demo></Demo>:<ScrollView>
+        <Demo></Demo>
+    </ScrollView>
+    }
+    
+
+    </>
+  )
+}
 const styles = StyleSheet.create({
   name: {
     // fontFamily:'Montserrat-Bold',

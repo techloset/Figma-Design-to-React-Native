@@ -15,7 +15,7 @@ const { width, height } = Dimensions.get('window')
 const Header = () => {
   const navigation: any = useNavigation()
   return (
-    <View style={[styles.container, { marginTop: height * 0.08 }]} >
+    <View style={[styles.container, { marginTop: height * 0.08 ,backgroundColor: '#FFFFFF' }]} >
       <TouchableOpacity onPress={() => navigation.navigate('Home')} style={{ padding: 3 }}>
 
         <Image source={require('../../assets/homePage/new.png')} />

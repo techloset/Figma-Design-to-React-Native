@@ -52,7 +52,7 @@ const Item = (props: any) => {
   return (
     <>
 
-      <Pressable style={{ paddingBottom: 17, backgroundColor: '#FFFFFF' }} onPress={() => setState(item.id)}>
+      <Pressable style={{ paddingBottom: 17, }} onPress={() => setState(item.id)}>
         <View
           style={{
             borderRadius: 30,
@@ -61,10 +61,10 @@ const Item = (props: any) => {
             height: 96,
             backgroundColor: state == item.id ? '#FF9D00' : '#FFFFFF',
             marginRight: 19,
-            marginLeft:props.index==0? 19:0,
+            marginLeft:props.index==0? 10:0,
 
             gap: 13,
-
+            marginTop:15,
             alignItems: 'center',
             elevation: 15,
 
@@ -98,7 +98,7 @@ const Calendar = () => {
 
   return (
     <View style={{ marginTop: 2 }}>
-      <View style={[styles.container, { marginBottom: 35 }]}>
+      <View style={[styles.container, {marginBottom:20}]}>
         <View>
           <Text style={styles.text}>June, 03</Text>
           <Text style={{ fontSize: 13, color: '#5D6065', fontFamily: "Montserrat-Regular", }}>16 task today</Text>
@@ -128,7 +128,7 @@ shadowColor: 'black', borderRadius:100}}>
           horizontal={true}
           keyExtractor={(item: any) => item.id}
           showsHorizontalScrollIndicator={false}
-          // style={{paddingLeft:10}}
+          style={{marginLeft:9}}
           />
           {/* </View> */}
 
